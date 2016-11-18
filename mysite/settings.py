@@ -25,7 +25,7 @@ SECRET_KEY = '+-sern&!zc5&$trgfy&(qukkj8gb*)-cljxf=&9_mq266&u_#@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ibojeddi.pythonanywhere.com','*']
 
 
 # Application definition

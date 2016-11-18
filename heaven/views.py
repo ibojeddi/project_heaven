@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def cemetery_list(request):
+    return render(request, 'heaven/cemetery_list.html', {})
