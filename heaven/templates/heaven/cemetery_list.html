@@ -1,15 +1,20 @@
+{% load staticfiles %}
 <html>
     <head>
         <title>Heavenly</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/heaven.css' %}">
+		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
- 
-	{% for cemetery in cemeteries %}
-    <div>
-        <h2><a href="">{{ cemetery.name }}</a></h2>
-		<p>City: {{ cemetery.city }}</p>
-        <p>Date Created: {{ cemetery.date_created|date:"D d M Y"|linebreaksbr }}</p>
-		<p>-----------------------------------------------------------</p>
-    </div>
-	{% endfor %}       
- 
+	<body>
+		{% for cemetery in cemeteries %}
+		<div>
+			<h2><a href="">{{ cemetery.name }}</a></h2>
+			<p class="city"><b>City:</b> {{ cemetery.city }}</p>
+			<p class="date"><b>Date Created:</b> {{ cemetery.date_created|date:"D d M Y"|linebreaksbr }}</p>
+			<p>-----------------------------------------------------------</p>
+		</div>
+		{% endfor %}       
+	</body>
 </html>
