@@ -2,11 +2,14 @@
     <head>
         <title>Heavenly</title>
     </head>
-    <body>
-        <div>
-            <h1><a href="">List Cemeteries</a></h1>
-        </div>
-		<p></p>
-
-    </body>
+ 
+	{% for cemetery in cemeteries %}
+    <div>
+        <h2><a href="">{{ cemetery.name }}</a></h2>
+		<p>City: {{ cemetery.city }}</p>
+        <p>Date Created: {{ cemetery.date_created|date:"D d M Y"|linebreaksbr }}</p>
+		<p>-----------------------------------------------------------</p>
+    </div>
+	{% endfor %}       
+ 
 </html>
