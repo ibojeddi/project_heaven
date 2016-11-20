@@ -1,10 +1,26 @@
+.page-header{
+	color:black;
+	font-family:Arial Black;
+	margin:Auto;
+	background-color:rgb(0,200,255);
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+	font-style:italic;
+}
+
 .city{
 	margin:0 0 0 0;
 	color:rgb(0,100,255);
+	font-family:Arial;
 	
 }
 .date {
     color: rgb(0,100,255);
+	font-family:Arial;
 }
 
 body {
@@ -12,11 +28,20 @@ body {
 }
 
 
-h2 a {
-    color: rgb(255,0,0);
-    font-family: Arial Black;
-}
-
 div{
 	border-color:blue;
+}
+.wrapper{
+	color:rgb(0,255,0)
+}
+.cname{
+	color:rgb(255,0,0);
+	font-family:Arial;
+	
+}
+
+wrapper{
+	border:1px;
+	border-radius:5px;
+	background-color
 }
