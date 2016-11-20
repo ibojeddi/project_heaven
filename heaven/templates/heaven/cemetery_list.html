@@ -1,11 +1,13 @@
 {% extends 'heaven/base.html' %}
 {% block content %}
 	{% for cemetery in cemeteries %}
-		<div class="wrapper">
-			<h2 class="cname"><a href="">{{ cemetery.name }}</a></h2>
-			<p class="city"><b>City:</b> {{ cemetery.city }}</p>
-			<p class="date"><b>Date Created:</b> {{ cemetery.date_created|date:"D d M Y"|linebreaksbr }}</p>
-			<p>****************************************************************************</p>
-		</div>
+		<a href="">
+			<div class="item">
+				<div class="cname">{{ cemetery.name }}</div>
+				<div class="city"><b>City:</b> {{ cemetery.city }}</div>
+				<div class="date"><b>Date Created:</b> {{ cemetery.date_created|date:"D d M Y"|linebreaksbr }}</div>
+			</div>		
+		</a>
+		
 	{% endfor %}
 {% endblock %}
