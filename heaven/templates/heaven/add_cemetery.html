@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+{% block addCemetery %}
+	<!-- Add Cemetery -->
+	<a href="/cemetery_add/" style="text-decoration:none">	
+		<div class="card">
+		  <img src={% static "img/add_cemetery.png" %} alt="Add Cemetery">
+		  <div class="card-container">
+			<h2><b>Add Cemetery</b></h2> 
+			<!--<p>Architect & Engineer</p> -->
+		  </div>
+		</div>
+	</a>
+{% endblock %}

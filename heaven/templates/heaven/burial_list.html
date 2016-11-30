@@ -1,0 +1,28 @@
+{% extends "heaven/base.html" %}
+{% load staticfiles %}
+
+	{% block content %}
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for first name...">
+	
+		<table id="myTable">
+			<tr class="header">
+				<th style="width:40%;">First Name</th>
+				<th style="width:30%;">Birth</th>
+				<th style="width:30%;">Death</th>
+				<th style="width:30%;">Sex</th>
+				<th style="width:30%;">Date Created</th>
+			</tr>
+			{% for burial in burials %}
+			<a href="#">
+				<tr>
+					<td><a class="clickable-table-data" href="#">{{ burial.first_name }}</a></td>
+					<td>{{ burial.DoB }}</td>
+					<td>{{ burial.DoD }}</td>
+					<td>{{ burial.sex }}</td>
+					<td>{{ burial.date_created|date:"D d M Y"|linebreaksbr }}</td>
+				</tr>
+			</a>
+			{% endfor %}
+		</table>
+	{% endblock %}
+

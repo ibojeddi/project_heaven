@@ -1,0 +1,14 @@
+*{
+	background-color:yellow;
+}
+
+.content{
+	background-color:rgb(255,0,0);
+}
+#header{
+	height:100px;
+	background-color:#F3F2ED;
+	margin:0;
+	padding:0;
+	}
+	

@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+
+{% block viewBurial %}
+	<!-- Add Cemetery -->
+	<a href="/burial_list/" style="text-decoration:none">	
+		<div class="card">
+		  <img src={% static "img/burial.png" %} alt="View Burial" style="width:100%">
+		  <div class="card-container">
+			<h2><b>View Burial</b></h2> 
+			<!--<p>Architect & Engineer</p> -->
+		  </div>
+		</div>
+	</a>
+{% endblock %}
