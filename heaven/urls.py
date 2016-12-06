@@ -7,8 +7,10 @@ urlpatterns = [
     url(r'^$', views.home,name='home'),
     url(r'^home/', views.home, name='home'),
     url(r'^cemetery/', views.cemetery, name='cemetery'),
+    url(r'^cemetery_add/', views.cemetery_add, name='cemetery_add'),
     url(r'^cemetery_list/', views.cemetery_list, name='cemetery_list'),
     url(r'^burial/', views.burial, name='burial'),
+    url(r'^burial_add/', views.burial_add, name='burial_add'),
     url(r'^burial_list/', views.burial_list, name='burial_list'),
 ]
 

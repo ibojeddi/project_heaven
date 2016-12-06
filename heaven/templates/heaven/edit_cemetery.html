@@ -1,0 +1,10 @@
+{% extends 'heaven/base.html' %}
+
+{% block content %}
+	<!-- Edit Cemetery -->
+  <h2>New Cemetery</h2>
+    <form method="post" class="cemetery-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

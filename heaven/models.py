@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Cemetery(models.Model):
     id = models.AutoField(primary_key=True)
-    name=models.CharField(max_length=100)
+    name=models.CharField(verbose_name="Cemetery Name",max_length=100)
     city=models.CharField(max_length=30)
     zipcode=models.CharField(max_length=5)
     date_created=models.DateTimeField(editable=False, auto_now_add=True)
@@ -16,12 +16,10 @@ class Cemetery(models.Model):
 
 class Burial(models.Model):
     id = models.AutoField(primary_key=True)
-    cemetery_id=models.ForeignKey(Cemetery,on_delete=models.CASCADE)
-    first_name=models.CharField(max_length=30)
-    DoB=models.DateField(blank=True, null=True)
-    DoD=models.DateField(blank=True, null=True)
-    created_by=models.ForeignKey('auth.User')
-
+    cemetery_id=models.ForeignKey( Cemetery,on_delete=models.CASCADE, verbose_name="Cemetery ID")
+    first_name=models.CharField(max_length=30, verbose_name="First Name")
+    DoB=models.DateField(blank=True, null=True, verbose_name="Date of Birth")
+    DoD=models.DateField(blank=True, null=True,verbose_name="Date of Death")
 
     '''Sex Options'''
     MALE='M'
