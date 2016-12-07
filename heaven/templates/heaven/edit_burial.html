@@ -1,10 +1,39 @@
 {% extends 'heaven/base.html' %}
 
+
+/* Include the jquery Ui here */
+ <script>
+  $(function() {
+    $( ".datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "1900:2012",
+      // You can put more options here.
+
+    });
+  });
+  </script>
+  
 {% block content %}
 	<!-- Edit Burial -->
-  <h2>New Burial</h2>
-    <form method="POST" class="burial-form">{% csrf_token %}
-        {{ form.as_p }}
+  <h2 style="color=blue; font-weight:bold; font-size:26px;">New Burial </h2>
+    <form method="post" class="burial-form">{% csrf_token %}
+	   <table >
+			{% for field in form %}
+		<tbody>
+			<tr>
+			  <td>
+				<label for="{{ field.label }}" style="color:RGB(0,100,200);display:inline-block;vertical-align:middle">{{ field.label_tag }}</label>
+			  </td>
+			  <td>
+				{{ field }}
+			  </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	  </table>
+		
+		
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 {% endblock %}

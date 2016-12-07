@@ -9,6 +9,14 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> 
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+		<script>
+			$(document).ready(function() {
+			$('.datepicker').datepicker({changeYear: true,changeMonth:true,yearRange: "1800:2030",dateFormat:"yy-mm-dd",showOtherMonths: true});
+			});
+		</script>		
 		<title>{% block title %}Heavenly{% endblock %}</title>
 	</head>
 

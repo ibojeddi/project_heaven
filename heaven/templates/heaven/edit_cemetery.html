@@ -2,9 +2,24 @@
 
 {% block content %}
 	<!-- Edit Cemetery -->
-  <h2>New Cemetery</h2>
+  <h2 style="color=blue; font-weight:bold; font-size:26px;">New Cemetery </h2>
     <form method="post" class="cemetery-form">{% csrf_token %}
-        {{ form.as_p }}
+	   <table >
+			{% for field in form %}
+		<tbody>
+			<tr>
+			  <td>
+				<label for="{{ field.label }}" style="color:RGB(0,100,200);display:inline-block;vertical-align:middle">{{ field.label_tag }}</label>
+			  </td>
+			  <td>
+				{{ field }}
+			  </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	  </table>
+		
+		
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 {% endblock %}

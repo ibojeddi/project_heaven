@@ -1,11 +1,13 @@
 /* Set the width of the side navigation to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
+	document.body.style.backgroundColor = "rgba(10,100,255,0.4)"; // opacity//
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
+	document.body.style.backgroundColor = "white";  // clear opacity//
 }
 
 /* Search above results table */
@@ -64,3 +66,16 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
 }
+
+
+/* Include the jquery Ui here */
+
+  $(function() {
+    $( ".datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "1900:2012",
+      // You can put more options here.
+
+    });
+  });

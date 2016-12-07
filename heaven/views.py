@@ -54,8 +54,8 @@ def burial_add(request):
             burial=form.save(commit=False)
             burial.cemetery_id=Cemetery.objects.get(id=request.POST.get('cemetery_id'))
             burial.first_name=request.POST.get('first_name')
-            burial.DoB=request.POST.get('DoB')
-            burial.DoD=request.POST.get('DoD')
+            burial.DoB=form.cleaned_data.get('DoB')
+            burial.DoD=form.cleaned_data.get    ('DoD')
             burial.sex=request.POST.get('sex')
             burial.date_created=request.POST.get('date_created')
             if request.user.is_authenticated:
