@@ -5,13 +5,13 @@ from django.core.validators import MinLengthValidator
 
 
 class CemeteryForm(forms.ModelForm):
+    zipcode=forms.CharField(min_length=5, max_length=5)
+
     class Meta:
         model=Cemetery
         fields=('name','city','zipcode',)
 
-        validators={
-            'zipcode':MinLengthValidator(5),
-            }
+
 
 
 class BurialForm(forms.ModelForm):

@@ -1,18 +1,4 @@
 {% extends 'heaven/base.html' %}
-
-
-/* Include the jquery Ui here */
- <script>
-  $(function() {
-    $( ".datepicker" ).datepicker({
-      changeMonth: true,
-      changeYear: true,
-      yearRange: "1900:2012",
-      // You can put more options here.
-
-    });
-  });
-  </script>
   
 {% block content %}
 	<!-- Edit Burial -->
@@ -27,6 +13,7 @@
 			  </td>
 			  <td>
 				{{ field }}
+				<script> </script>
 			  </td>
 			</tr>
 			{% endfor %}

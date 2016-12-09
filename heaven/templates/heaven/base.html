@@ -10,6 +10,8 @@
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" />
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> 
+	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 		<script>
@@ -33,20 +35,26 @@
 		  <a href="#" class="mbtn">Contact</a>
 		</div>
 
-		<!-- Use any element to open the sidenav -->
+		<!-- topbar / icon bar -->
+		{% include "heaven/topbar.html" %}
+		
+		
+		<!--
 		<div id="topbar">
-			<span onclick="openNav()" background="blue"> 
-				<a href="#menu">   
-					<img id="menu-icon" src={% static 'img/menu.svg' %} alt="Menu" height="42" width="42" >
-				</a> 
-			</span>
+				<span onclick="openNav()" > 
+					<a href="#menu">   
+						<img id="menu-icon" src={% static 'img/menu.svg' %} alt="Menu" height="42" width="42" >
+					</a> 
+				</span>
+			
 		</div>
+		-->
 		<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 		<div id="main">
-		  {% block content %} {% endblock content %}
+		  {% block content %}  {% endblock content %}
 		</div>
 				<div id="main2">
-		  {% block content2 %} {% endblock content2 %}
+		  {% block content2 %}  {% endblock content2 %}
 		</div>
 	</body>
 </html>
