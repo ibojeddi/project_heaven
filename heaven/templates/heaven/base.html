@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<script src="{% static '/js/sidenav.js' %}"></script>
+		<script src="{% static '/js/sidenav.js' %}"></script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +19,7 @@
 			$('.datepicker').datepicker({changeYear: true,changeMonth:true,yearRange: "1800:2030",dateFormat:"yy-mm-dd",showOtherMonths: true});
 			});
 		</script>		
+
 		<title>{% block title %}Heavenly{% endblock %}</title>
 	</head>
 
@@ -28,7 +29,7 @@
 		  <a href="/home/" class="mbtn">Home</a>
 		  <a href="/cemetery/" class="mbtn">Cemetery</a>
 		  <a href="/burial/" class="mbtn">Burial</a>
-		  <a href="#" class="mbtn">Photos</a>
+		  <a href="/photo/" class="mbtn">Photo</a>
 		  <a href="#" class="mbtn">Search</a>
 		  <a href="#" class="mbtn">Analytics</a>
 		  <a href="#" class="mbtn">About</a>

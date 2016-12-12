@@ -4,12 +4,19 @@
 
 {% block content %}
 	
-	<div id="card-wrapper">
+	<div class="cards_envelope">
 		<!-- Add Cemetery -->
-		{% include "heaven/add_cemetery.html" %}
+		{% include "heaven/add_cemetery_card.html" %}
 		
 		<!-- View Cemeteries -->
-		{% include "heaven/view_cemetery.html" %}
+		{% include "heaven/view_cemetery_card.html" %}
+		
+		<!-- Edit Cemeteries -->
+		{% include "heaven/edit_cemetery_card.html" %}
+		
+		<!-- Delete Cemeteries -->
+		{% include "heaven/delete_cemetery_card.html" %}
+		
 	</div>
 	
 {% endblock %}

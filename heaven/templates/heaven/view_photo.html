@@ -1,15 +1,7 @@
+{% extends "heaven/base.html" %}
 {% load staticfiles %}
 
+	{% block content %}
+<h1> Coming soon... </h1>
+	{% endblock %}
 
-{% block viewPhoto %}
-	<!-- View Photo -->
-	<a href="/photo_list/" style="text-decoration:none">	
-		<div class="card">
-		  <img src={% static "img/photo.png" %} alt="View Photo" style="width:100%">
-		  <div class="card-container">
-			<h2><b>View Photo</b></h2> 
-			<!--<p>Architect & Engineer</p> -->
-		  </div>
-		</div>
-	</a>
-{% endblock %}

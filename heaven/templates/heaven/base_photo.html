@@ -1,0 +1,21 @@
+{% extends "heaven/base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+	
+	<div class="cards_envelope">
+		<!-- Add Photo -->
+		{% include "heaven/add_photo_card.html" %}
+		
+		<!-- View Photo -->
+		{% include "heaven/view_photo_card.html" %}
+		
+		<!-- Edit Photo -->
+		{% include "heaven/edit_photo_card.html" %}
+		
+		<!-- Delete Photo -->
+		{% include "heaven/delete_photo_card.html" %}
+	</div>
+	
+{% endblock %}

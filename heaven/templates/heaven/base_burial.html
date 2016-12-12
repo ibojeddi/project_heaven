@@ -1,13 +1,20 @@
-{% extends "heaven/base.html" %}
+{% extends "heaven/home.html" %}
 {% load staticfiles %}
 
-
 {% block content %}
-	<div id="card-wrapper">
+
+	<div class="cards_envelope">
 		<!-- Add Burial -->
-		{% include "heaven/add_burial.html" %}
+		{% include "heaven/add_burial_card.html" %}
 		
 		<!-- View Burial -->
-		{% include "heaven/view_burial.html" %}
+		{% include "heaven/view_burial_card.html" %}
+		
+		<!-- Edit Burial -->
+		{% include "heaven/edit_burial_card.html" %}
+		
+		<!-- delete Burial -->
+		{% include "heaven/delete_burial_card.html" %}
 	</div>
-{% endblock %}
+	
+{% endblock content %}

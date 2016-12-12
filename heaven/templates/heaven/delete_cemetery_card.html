@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<!-- Delete Cemetery Card-->
+<div class="card_wrapper">
+	<a href="{% url 'delete_cemetery' %}" style="text-decoration:none">	
+		<div class="card">
+		  <img src={% static "img/delete_cemetery.png" %} alt="Delete Cemetery Card">
+		  <div class="card-container">
+			<h2><b>Delete Cemetery</b></h2> 
+		  </div>
+		</div>
+	</a>
+</div>
+

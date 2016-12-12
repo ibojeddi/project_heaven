@@ -2,39 +2,34 @@
 {% load static %}
 {% load staticfiles %}
 
-
-
-
-
 {% block content %}
 <table id="homeTable">
-<!--
-			<tr class="header">
-				<th style="width:40%;">First Name</th>
-				<th style="width:30%;">Birth</th>
-				<th style="width:30%;">Death</th>
-				<th style="width:30%;">Sex</th>
-				<th style="width:30%;">Date Created</th>
-			</tr>
-			-->
-			
-	<tr>
-		<td>{% include "heaven/add_cemetery.html" %}</td>
-		<td>{% include "heaven/add_burial.html" %}</td>
-		<td>{% include "heaven/add_photo.html" %}</td>
+
+	<tr id="cemeteryRow">
+		<td>{% include "heaven/add_cemetery_card.html" %}</td>
+		<td>{% include "heaven/view_cemetery_card.html" %}</td>
+		<td>{% include "heaven/edit_cemetery_card.html" %}</td>
+		<td>{% include "heaven/delete_cemetery_card.html" %}</td>
 	</tr>
-	
-	<tr>
-		<td>{% include "heaven/view_cemetery.html" %}</td>
-		<td>{% include "heaven/view_burial.html" %}</td>
-		<td>{% include "heaven/view_photo.html" %}</td>
+
+	<tr id="burialRow">
+		<td>{% include "heaven/add_burial_card.html" %}</td>
+		<td>{% include "heaven/view_burial_card.html" %}</td>
+		<td>{% include "heaven/edit_burial_card.html" %}</td>
+		<td>{% include "heaven/delete_burial_card.html" %}</td>
+
 	</tr>	
+	
+	<tr id="photoRow">
+		<td>{% include "heaven/add_photo_card.html" %}</td>
+		<td>{% include "heaven/view_photo_card.html" %}</td>
+		<td>{% include "heaven/edit_photo_card.html" %}</td>
+		<td>{% include "heaven/delete_photo_card.html" %}</td>
+	</tr>
 	
 </table>
 
 {% endblock content%}
-
-
 
 {% block content2 %} {% endblock content2%}
 

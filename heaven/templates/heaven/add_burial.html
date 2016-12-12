@@ -1,15 +1,26 @@
-{% load staticfiles %}
-
-
-{% block addBurial %}
+{% extends 'heaven/base.html' %}
+  
+{% block content %}
 	<!-- Add Burial -->
-	<a href="/burial_add/" style="text-decoration:none">	
-		<div class="card">
-		  <img src={% static "img/add_burial.png" %} alt="Add Burial" >
-		  <div class="card-container">
-			<h2><b>Add Burial</b></h2> 
-			<!--<p>Architect & Engineer</p> -->
-		  </div>
-		</div>
-	</a>
+  <h2 style="color=blue; font-weight:bold; font-size:26px;">New Burial </h2>
+    <form method="post" class="burial-form">{% csrf_token %}
+	   <table >
+			{% for field in form %}
+		<tbody>
+			<tr>
+			  <td>
+				<label for="{{ field.label }}" style="color:RGB(0,100,200);display:inline-block;vertical-align:middle">{{ field.label_tag }}</label>
+			  </td>
+			  <td>
+				{{ field }}
+				<script> </script>
+			  </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	  </table>
+		
+		
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
 {% endblock %}

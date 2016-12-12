@@ -8,9 +8,6 @@ body {
 	
 }
 
-
-
-
 /* General Font*/
 *{
 	font-family:Arial;
@@ -18,73 +15,16 @@ body {
 }
 
 
-#topbar{
-	background-color:rgba(10,150,255,0.8) ;
-	width:100%;
-	position: inline-block;
-	
-}
-/*                  */
-/* Dropdown Button */
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-
-
-
-
-
-/* ----------------- icon bar  --------------------- */
+/* ----------------- top bar / icon bar  --------------------- */
 
 .icon-bar {
-	height:70px;
+	height:80x;
 	width: 100%;
 	overflow: auto;
     text-align: center;
-	vertical-align:top;
     background-color: rgba(0,150,255,1);
-	position:fixed;
+/*	position:fixed;*/
 	margin-top:-60px;
     
 }
@@ -93,7 +33,7 @@ body {
     width: 15%;
     padding: 12px 0;
     float: left;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     color: white;
     font-size: 36px;
 }
@@ -225,22 +165,39 @@ body {
 /* =============== Home Tab =================*/ 
 #homeTable{
 	table-layout: fixed;
+	margin-left:100px;
 }
 #homeTable tr {
     /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd; 
+    /*order-bottom: 1px solid #ddd; */
 	text-align: center; /* Left-align text */
     padding: 10px; /* Add padding */
 	width:20px;
 }
 
 
+
 #homeTable tr td div{
-    padding: 10px; /* Add padding */
+    padding: 5px; /* Add padding */
 }
 
-/* ================   base_cemetery / base_burial  ==================== */
 
+/* ================   base_cemetery / base_burial  ==================== */
+.cards_envelope{
+	margin-top:100px;
+	float: left;
+    position: relative;
+    left: 50%;
+	top:50%;
+}
+
+.card_wrapper{
+	float: left;
+    position: relative;
+    left: -50%;
+}
+
+/*
 #card-wrapper{
 	position:absolute;
 
@@ -249,7 +206,7 @@ body {
 	left:50%;
 	display:flex;
 }
-
+*/
 
 .card{
 	text-align:center;

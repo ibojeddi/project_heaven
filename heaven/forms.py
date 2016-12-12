@@ -12,8 +12,6 @@ class CemeteryForm(forms.ModelForm):
         fields=('name','city','zipcode',)
 
 
-
-
 class BurialForm(forms.ModelForm):
     class Meta:
         model=Burial

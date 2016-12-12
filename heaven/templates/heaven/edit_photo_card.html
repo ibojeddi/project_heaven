@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<!-- Edit Photo Card-->
+<div class="card_wrapper">
+	<a href="{% url 'edit_photo' %}" style="text-decoration:none">	
+		<div class="card">
+		  <img src={% static "img/edit_photo.png" %} alt="Edit Photo Card">
+		  <div class="card-container">
+			<h2><b>Edit Photo</b></h2> 
+		  </div>
+		</div>
+	</a>
+</div>
+

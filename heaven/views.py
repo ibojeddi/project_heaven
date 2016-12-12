@@ -13,19 +13,8 @@ def home(request):
 def cemetery(request):
     return render(request, 'heaven/base_cemetery.html', {})
 
-def cemetery_list(request):
-    cemeteries=Cemetery.objects.filter(date_created__lte=timezone.now()).order_by('date_created')
-    return render(request, 'heaven/cemetery_list.html', {'cemeteries':cemeteries})
-
-def burial(request):
-    return render(request, 'heaven/base_burial.html', {})
-
-def burial_list(request):
-    burials=Burial.objects.filter(date_created__lte=timezone.now()).order_by('date_created')
-    return render(request, 'heaven/burial_list.html', {'burials':burials})
-
-
-def cemetery_add(request):
+# -------- Cemetery ----------
+def add_cemetery(request):
     if request.method=='POST':
         form=CemeteryForm(request.POST)
         if form.is_valid():
@@ -40,12 +29,27 @@ def cemetery_add(request):
                 return login(request)
             #cemetery_obj=Cemetery(name=name, city=city,zipcode=zipcode,created_by=created_by)
             cemetery.save()
-            return redirect('cemetery_list')
+            return redirect('view_cemetery')
     else:
         form=CemeteryForm
-    return render(request,'heaven/edit_cemetery.html',{'form':form})
+    return render(request,'heaven/add_cemetery.html',{'form':form})
 
-def burial_add(request):
+def view_cemetery(request):
+    cemeteries=Cemetery.objects.filter(date_created__lte=timezone.now()).order_by('date_created')
+    return render(request, 'heaven/view_cemetery.html', {'cemeteries':cemeteries})
+
+def edit_cemetery(request):
+    return render(request, 'heaven/edit_cemetery.html', {})
+
+def delete_cemetery(request):
+    return render(request, 'heaven/delete_cemetery.html', {})
+
+# -------- Burial ----------
+
+def burial(request):
+    return render(request, 'heaven/base_burial.html', {})
+
+def add_burial(request):
     if request.method=="POST":
         form=BurialForm(request.POST)
         if form.is_valid():
@@ -63,7 +67,36 @@ def burial_add(request):
             else:
                 return login(request)
             burial.save()
-            return redirect('burial_list')
+            return redirect('view_burial')
     else:
         form=BurialForm
-    return render(request,'heaven/edit_burial.html',{'form':form})
+    return render(request,'heaven/add_burial.html',{'form':form})
+
+
+def view_burial(request):
+    burials=Burial.objects.filter(date_created__lte=timezone.now()).order_by('date_created')
+    return render(request, 'heaven/view_burial.html', {'burials':burials})
+
+def edit_burial(request):
+    return render(request, 'heaven/edit_burial.html', {})
+
+def delete_burial(request):
+    return render(request, 'heaven/delete_burial.html', {})
+
+#---------- Photo ------------
+
+def photo(request):
+    return render(request, 'heaven/base_photo.html', {})
+
+def add_photo(request):
+    return render(request,'heaven/add_photo.html')
+
+def view_photo(request):
+    return render(request, 'heaven/view_photo.html')
+
+def edit_photo(request):
+    return render(request, 'heaven/edit_photo.html', {})
+
+def delete_photo(request):
+    return render(request, 'heaven/delete_photo.html', {})
+

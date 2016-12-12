@@ -1,15 +1,24 @@
+{% extends "heaven/base.html" %}
 {% load staticfiles %}
 
+	{% block content %}
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for cemetery names...">
+	
+		<table id="myTable">
+			<tr class="header">
+				<th style="width:40%;">Cemetery Name</th>
+				<th style="width:30%;">City</th>
+				<th style="width:30%;">Date Created</th>
+			</tr>
+			{% for cemetery in cemeteries %}
+			<a href="#">
+				<tr>
+					<td><a class="clickable-table-data" href="#">{{ cemetery.name }}</a></td>
+					<td>{{ cemetery.city }}</td>
+					<td>{{ cemetery.date_created|date:"D d M Y"|linebreaksbr }}</td>
+				</tr>
+			</a>
+			{% endfor %}
+		</table>
+	{% endblock %}
 
-{% block viewCemetery %}
-	<!-- View Cemetery -->
-	<a href="/cemetery_list/" style="text-decoration:none">	
-		<div class="card">
-		  <img src={% static "img/cemetery.png" %} alt="View Cemetery" style="width:100%">
-		  <div class="card-container">
-			<h2><b>View Cemetery</b></h2> 
-			<!--<p>Architect & Engineer</p> -->
-		  </div>
-		</div>
-	</a>
-{% endblock %}
