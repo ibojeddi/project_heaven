@@ -100,3 +100,15 @@ def edit_photo(request):
 def delete_photo(request):
     return render(request, 'heaven/delete_photo.html', {})
 
+#------ add ----------
+def add(request):
+    return render(request, 'heaven/base_add.html', {})
+
+def view(request):
+    return render(request, 'heaven/base_view.html', {})
+
+def edit(request):
+    return render(request, 'heaven/base_edit.html', {})
+
+def delete(request):
+    return render(request, 'heaven/base_delete.html', {})

@@ -1,0 +1,14 @@
+{% extends "heaven/home.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+	<div class="cards_envelope">
+		{% include "heaven/edit_cemetery_card.html" %}
+
+		{% include "heaven/edit_burial_card.html" %}
+
+		{% include "heaven/edit_photo_card.html" %}
+	</div>
+	
+{% endblock content %}
