@@ -1,13 +1,19 @@
 {% load staticfiles %}
 
 	<div class="icon-bar">
-			  <a class="active" href="#" onclick="openNav()"><i class="fa fa-bars"><p>Menu</p></i></a> 
-			  <a href="/home/"><i class="fa fa-home"><p>Home</p></i></a> 			
+			<a class="active" href="#" onclick="openNav()"><i class="fa fa-bars"><p>Menu</p></i></a> 
+			<a href="/home/"><i class="fa fa-home"><p>Home</p></i></a> 			
 
-			  <a href="/view/"><i class="fa fa-eye" ><p>View</p></i></a> 
-			  <a href="/add/"><i class="fa fa-plus"><p>Add</p></i></a>
-			  <a href="/edit/"><i class="fa fa-edit"><p>Edit</p></i></a> 
-			  <a href="/delete/"><i class="fa fa-trash"><p>Delete</p></i></a> 
+			<a href="/view/"><i class="fa fa-eye" ><p>View</p></i></a> 
+			<a href="/add/"><i class="fa fa-plus"><p>Add</p></i></a>
+			<a href="/edit/"><i class="fa fa-edit"><p>Edit</p></i></a> 
+			<a href="/delete/"><i class="fa fa-trash"><p>Delete</p></i></a> 
+			{% if user.is_authenticated %}
+				<a href="/logout/"; style="color:rgb(80,80,80)"><i class="fa fa-sign-out"><p>Logout</p></i></a>
+			{% else %}
+			<a href="/login/"; style="color:rgb(80,80,80)"><i class="fa fa-sign-in"><p>Login</p></i></a>
+			<a href="/register/"; style="color:rgb(80,80,80)"><i class="fa fa-user"><p>Register</p></i></a>
+			{% endif %}
 	</div>
 
 <!-- 

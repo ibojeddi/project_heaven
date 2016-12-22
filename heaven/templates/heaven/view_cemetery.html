@@ -13,7 +13,7 @@
 			{% for cemetery in cemeteries %}
 			<a href="#">
 				<tr>
-					<td><a class="clickable-table-data" href="#">{{ cemetery.name }}</a></td>
+					<td><a class="clickable-table-data" href="/cemetery_details/">{{ cemetery.name }}</a></td>
 					<td>{{ cemetery.city }}</td>
 					<td>{{ cemetery.date_created|date:"D d M Y"|linebreaksbr }}</td>
 				</tr>

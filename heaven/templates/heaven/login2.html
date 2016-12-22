@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+
+<html>
+    <head>
+        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
+        <title>Heavenly Login</title>
+		<link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css" />
+    </head>
+
+    <body>
+	<form id="login_form" method="post" action="/login/">
+	       {% csrf_token %}
+		<div class="login_body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div id="site_name">Heavenly</div> 
+			<div id="tagline">A Historical Cemeteries Portal</div>
+		</div>
+		
+			
+		<div class="login">
+			<input type="text" placeholder="username" name="user"><br>
+			<input type="password" placeholder="password" name="password"><br>
+			<input type="submit" value="submit" >
+		</div>
+	 </form>
+
+    </body>
+</html>
+

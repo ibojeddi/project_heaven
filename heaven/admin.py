@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import Cemetery,Burial
+from .models import Cemetery,Burial,UserProfile
+
+
 
 admin.site.register(Cemetery)
 admin.site.register(Burial)
+admin.site.register(UserProfile)
+
 '''
 class MyAdmin(admin.ModelAdmin):
     def save_model(self, request, instance, form, change):

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'heaven.middleware.LoginRequiredMiddleware',
 ]
+
+#  'heaven.middleware.LoginRequiredMiddleware',
 
 ROOT_URLCONF = 'mysite.urls'
 
@@ -120,3 +124,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+
+LOGIN_URL = '/login/' #when login_required is used, tango with django
+LOGIN_REDIRECT_URL = 'home'
+
+# I added this after having problem logging in django/admin due to adding register functionality,
+ #the solution suggested was found at: http://stackoverflow.com/questions/35937247/doesnotexist-at-admin-login-after-upgrading-to-django-1-8 '''
+SITE_ID=1
+
+LOGIN_EXEMPT_URLS = (
+r'^about\.html$',
+r'^legal/', # allow the entire /legal/* subsection
+r'^home/'
+)
