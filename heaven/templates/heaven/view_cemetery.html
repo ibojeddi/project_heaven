@@ -6,16 +6,20 @@
 	
 		<table id="myTable">
 			<tr class="header">
-				<th style="width:40%;">Cemetery Name</th>
-				<th style="width:30%;">City</th>
-				<th style="width:30%;">Date Created</th>
+				<th style="width:20%;">Cemetery Name</th>
+				<th style="width:20%;">City</th>
+				<th style="width:20%">Date Created</th>
+				<th style="width:20%;">Latitude</th>
+				<th style="width:20%;">Longitude</th>
 			</tr>
 			{% for cemetery in cemeteries %}
 			<a href="#">
 				<tr>
-					<td><a class="clickable-table-data" href="/cemetery_details/">{{ cemetery.name }}</a></td>
+					<td><a class="clickable-table-data" href="{% url 'view_cemetery_details' pk=cemetery.pk %}">{{ cemetery.name }}</a></td>
 					<td>{{ cemetery.city }}</td>
-					<td>{{ cemetery.date_created|date:"D d M Y"|linebreaksbr }}</td>
+					<td>{{ cemetery.date_created|date:"D d M Y" }}</td>
+					<td>{{ cemetery.latitude }}</td>
+					<td>{{ cemetery.longitude }}</td>
 				</tr>
 			</a>
 			{% endfor %}

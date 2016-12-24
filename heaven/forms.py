@@ -1,3 +1,4 @@
+from decimal import Decimal
 from django import forms
 from .models import Cemetery, Burial
 from django.utils import timezone
@@ -7,12 +8,16 @@ from django.contrib.auth.models import User
 
 
 class CemeteryForm(forms.ModelForm):
-    zipcode=forms.CharField(min_length=5, max_length=5)
+    zipcode=forms.CharField(min_length=5, max_length=5,
+                            widget=forms.NumberInput(attrs={'placeholder': '5 Digits'}))
+    latitude=forms.DecimalField(max_digits=8, decimal_places=6,min_value=-85.05115,max_value=85.05115,
+                                widget=forms.NumberInput(attrs={'placeholder': '0.000,000  ( -85 to 85 )','style':'width:200px'}))
+    longitude=forms.DecimalField(max_digits=9, decimal_places=6,min_value=-180,max_value=180,
+                                 widget=forms.NumberInput(attrs={'placeholder': '0.000,000  ( -180 to 180 )','style':'width:200px'}))
 
     class Meta:
         model=Cemetery
-        fields=('name','city','zipcode',)
-
+        fields=('name','city','zipcode','latitude','longitude')
 
 class BurialForm(forms.ModelForm):
     class Meta:

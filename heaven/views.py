@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Cemetery, Burial
 from .forms import CemeteryForm, BurialForm, UserProfileForm, UserForm
 from django.utils import timezone
@@ -23,11 +23,14 @@ def cemetery(request):
 def add_cemetery(request):
     if request.method=='POST':
         form=CemeteryForm(request.POST)
+
         if form.is_valid():
             cemetery=form.save(commit=False)
             cemetery.name=request.POST.get('name')
             cemetery.city=request.POST.get('city')
             cemetery.zipcode=request.POST.get('zipcode')
+            cemetery.latitude=request.POST.get('latitude')
+            cemetery.longitude=request.POST.get('longitude')
             cemetery.date_created=timezone.now()
             if request.user.is_authenticated:
                 cemetery.created_by=request.user
@@ -43,6 +46,10 @@ def add_cemetery(request):
 def view_cemetery(request):
     cemeteries=Cemetery.objects.filter(date_created__lte=timezone.now()).order_by('date_created')
     return render(request, 'heaven/view_cemetery.html', {'cemeteries':cemeteries})
+
+def view_cemetery_details(request,pk):
+    cemetery=get_object_or_404(Cemetery,pk=pk)
+    return render(request, 'heaven/view_cemetery_details.html', {'cemetery':cemetery})
 
 def edit_cemetery(request):
     return render(request, 'heaven/edit_cemetery.html', {})

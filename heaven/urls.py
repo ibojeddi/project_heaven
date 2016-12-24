@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^cemetery/', views.cemetery, name='cemetery'),
     url(r'^add_cemetery/', views.add_cemetery, name='add_cemetery'),
     url(r'^view_cemetery/', views.view_cemetery, name='view_cemetery'),
+    url(r'^view_cemetery_details/(?P<pk>\d+)/$', views.view_cemetery_details, name='view_cemetery_details'),
     url(r'^edit_cemetery/', views.edit_cemetery, name='edit_cemetery'),
     url(r'^delete_cemetery/', views.delete_cemetery, name='delete_cemetery'),
     url(r'^burial/', views.burial, name='burial'),

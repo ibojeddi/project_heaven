@@ -1,0 +1,20 @@
+{% extends "heaven/base.html" %}
+{% load staticfiles %}
+
+	{% block content %}
+	<h2>Location of Cemetery</h2>
+		<div id="map" style="width:1000px;height:500px;background:yellow">
+		<script>
+			function myMap() {
+			  var mapCanvas = document.getElementById("map");
+			  var myLatLng=new google.maps.LatLng({{ cemetery.latitude }}, {{ cemetery.longitude }})
+			  var mapOptions = {center: myLatLng, zoom: 20};
+			  var map = new google.maps.Map(mapCanvas, mapOptions);
+			  var marker = new google.maps.Marker({position: myLatLng});
+			  marker.setMap(map);
+			}
+		</script>
+
+		<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+	{% endblock %}
+
