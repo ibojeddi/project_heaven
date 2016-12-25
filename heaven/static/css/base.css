@@ -14,8 +14,44 @@ body {
 /*border: 1px solid black;	*/
 }
 
-#map {
+#map-wrapper{
+	width: 100%;
     height: 100%;
+    padding: 10px;
+}
+
+#map-wrapper > div {
+	border:1px solid rgba(150,50,150,0.3);
+}
+
+
+#map{
+	width: 80%;
+    height: 90%;
+    float: left;
+}
+#map-element-info {
+    height: 90%;
+}
+
+.map-element-info-title{
+	color:rgb(0,100,200);
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+}
+
+.map-element-info-text{
+	margin-left:10px;
+	padding-left:10px;
+	padding-bottom:10px;
+}
+
+
+
+#map-element-info > h3{
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	color:rgb(0,200,100);
+	font-weight:bold;
 }
 
 /* ----------------- top bar / icon bar  --------------------- */

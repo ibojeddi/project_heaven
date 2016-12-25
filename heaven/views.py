@@ -74,6 +74,8 @@ def add_burial(request):
             burial.DoB=form.cleaned_data.get('DoB')
             burial.DoD=form.cleaned_data.get    ('DoD')
             burial.sex=request.POST.get('sex')
+            burial.latitude=request.POST.get('latitude')
+            burial.longitude=request.POST.get('longitude')
             burial.date_created=request.POST.get('date_created')
             if request.user.is_authenticated:
                 burial.created_by=request.user
@@ -89,6 +91,10 @@ def add_burial(request):
 def view_burial(request):
     burials=Burial.objects.filter(date_created__lte=timezone.now()).order_by('date_created')
     return render(request, 'heaven/view_burial.html', {'burials':burials})
+
+def view_burial_details(request,pk):
+    burial=get_object_or_404(Burial,pk=pk)
+    return render(request, 'heaven/view_burial_details.html', {'burial':burial})
 
 def edit_burial(request):
     return render(request, 'heaven/edit_burial.html', {})

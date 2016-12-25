@@ -15,7 +15,7 @@
 			{% for burial in burials %}
 			<a href="#">
 				<tr>
-					<td><a class="clickable-table-data" href="#">{{ burial.first_name }}</a></td>
+					<td><a class="clickable-table-data" href="{% url 'view_burial_details' pk=burial.pk %}">{{ burial.first_name }}</a></td>
 					<td>{{ burial.DoB }}</td>
 					<td>{{ burial.DoD }}</td>
 					<td>{{ burial.sex }}</td>

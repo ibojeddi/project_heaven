@@ -34,7 +34,10 @@ class Burial(models.Model):
     UNKNOWN='U'
     sex_choices=((MALE,'Male'),(FEMALE,'Female'),(UNKNOWN,'Unknown'))
     sex=models.CharField(max_length=1,choices=sex_choices)
-
+    latitude=models.DecimalField(default=Decimal('0.000000'),max_digits=8, decimal_places=6,
+                                 validators=[MinValueValidator(-85.05115), MaxValueValidator(85.05115)])
+    longitude=models.DecimalField(default=Decimal('0.000000'),max_digits=9, decimal_places=6,
+                                  validators=[MinValueValidator(-180), MaxValueValidator(180)])
     date_created=models.DateTimeField(editable=False, auto_now_add=True)
     created_by=models.ForeignKey('auth.User')
 

@@ -19,7 +19,12 @@ class CemeteryForm(forms.ModelForm):
         model=Cemetery
         fields=('name','city','zipcode','latitude','longitude')
 
+
 class BurialForm(forms.ModelForm):
+    latitude=forms.DecimalField(max_digits=8, decimal_places=6,min_value=-85.05115,max_value=85.05115,
+                                widget=forms.NumberInput(attrs={'placeholder': '0.000,000  ( -85 to 85 )','style':'width:200px'}))
+    longitude=forms.DecimalField(max_digits=9, decimal_places=6,min_value=-180,max_value=180,
+                                 widget=forms.NumberInput(attrs={'placeholder': '0.000,000  ( -180 to 180 )','style':'width:200px'}))
     class Meta:
         model=Burial
         fields=('cemetery_id','first_name','DoB','DoD','sex',)

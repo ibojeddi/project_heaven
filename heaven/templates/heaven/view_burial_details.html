@@ -1,0 +1,36 @@
+{% extends "heaven/base.html" %}
+{% load staticfiles %}
+
+	{% block content %}
+	
+	<div id="map-wrapper">
+		<div id="map" ></div>
+		
+		<div id="map-element-info">
+			<h3>{{ burial.first_name }}</h3>
+			<h3></h3>
+			
+			<h5 class="map-element-info-title">Cemetery: </h5><ul class="map-element-info-text">{{ burial.cemetery_id }}</ul>
+			<h5 class="map-element-info-title">Date of Birth: </h5><ul class="map-element-info-text">{{ burial.DoB}}</ul>
+			<h5 class="map-element-info-title">Date of Death: </h5><ul class="map-element-info-text">{{ burial.DoD}}</ul>
+			<h5 class="map-element-info-title">Sex: </h5><ul class="map-element-info-text">{{ burial.sex}}</ul>
+			<h5 class="map-element-info-title">Latitude: </h5><ul class="map-element-info-text">{{ burial.latitude }}</ul>
+			<h5 class="map-element-info-title">Longitude: </h5><ul class="map-element-info-text">{{ burial.longitude }}</ul>	
+			
+		</div>
+	</div>
+	<script>
+		function myMap() {
+			/*google.maps.visualRefresh = true;*/
+			var mapCanvas = document.getElementById("map");
+			var myLatLng=new google.maps.LatLng({{ burial.latitude }}, {{ burial.longitude }})
+			var mapOptions = {center: myLatLng, zoom: 20};
+			var map = new google.maps.Map(mapCanvas, mapOptions);
+			var marker = new google.maps.Marker({position: myLatLng});
+			marker.setMap(map);
+		}
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6ipKRE2BhbdFJt8115j6hvIdsvSChl_c&callback=myMap"></script>
+	{% endblock %}
+
